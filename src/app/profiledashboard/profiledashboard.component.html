@@ -1,0 +1,31 @@
+ <div class="container">
+ 
+<div *ngFor="let c of cdx" >
+    
+    <h2> Hi {{c.firstname}}!</h2>
+    <hr/>
+ <h3 style="font-weight: bolder;">
+     Your Details 
+ </h3>
+<ul>
+    
+     Email: {{c.emailid}}
+    <br>
+     Mobile: {{c.phonenumber}}
+    <br>
+     Annual Income: {{c.annualincome}}
+     <br>
+     Customer ID: {{c.customerid}}
+    <br>
+</ul>
+<button class="btn btn-primary" (click)="logout()">LogOut</button>
+
+</div>
+
+</div>
+ 
+ 
+
+
+
+
