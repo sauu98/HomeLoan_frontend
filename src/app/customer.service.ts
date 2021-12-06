@@ -29,9 +29,10 @@ addLogin(customerid?:number)
 // }
 
 
-searchbycustomerid(customerid:number)
+ searchbycustomerid(customerid:number)
 {
-  return this.httpClient.get(this.baseUrl+"/customer/"+customerid);
+  console.log(customerid+ "From Service");
+  return this.httpClient.get(this.baseUrl+"/getcustomer/"+customerid);
 }
 
 }

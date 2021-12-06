@@ -54,7 +54,7 @@ export class CalculatorComponent implements OnInit {
   
   calculateEMI()
   {
-    this.Emi=this.principle*this.rate1*( (Math.pow((1+this.rate1),this.time))/( Math.pow((1+this.rate1),this.time)-1));
+    this.Emi=(this.principle*this.rate1*( (Math.pow((1+this.rate1),this.time))/( Math.pow((1+this.rate1),this.time)-1)));
     console.log(Math.pow(2, 4));
   }
 

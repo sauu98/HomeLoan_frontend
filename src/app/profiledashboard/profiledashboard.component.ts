@@ -12,15 +12,15 @@ export class ProfiledashboardComponent implements OnInit {
 
   constructor(private customerService:CustomerService,private router:Router) { }
   cd1:Previewdetails=new Previewdetails();
-  cdx=new Array<Previewdetails>();
+  // cdx=new Array<Previewdetails>();
   customerid:number=0;
   cuId:any;
+  details:any;
 
   ngOnInit(): void {
-    this.cuId=localStorage.getItem("cuID");
-    if(this.cuId==null){
-      this.router.navigate(['login']);
-    }
+    this.cuId=localStorage.getItem("cuID") as string;
+    console.log(this.cuId);
+    
 
     this.searchbycustomerid(this.cuId);
   }
@@ -30,15 +30,17 @@ export class ProfiledashboardComponent implements OnInit {
     localStorage.removeItem("cuID");
     this.router.navigate(['login']);
   }
-  details:any={};
+ 
   searchbycustomerid(id?:any)
   {
+  
     this.customerService.searchbycustomerid(id).subscribe
     (
       (data:any)=>{
       console.log(data);
       this.cd1=data;
-      this.cdx.push(this.cd1);
+      // this.cdx.push(this.cd1);
+      console.log(this.cd1);
       }
     )
   }

@@ -30,10 +30,11 @@ export class AdminComponent implements OnInit {
   }
 
   deleteRow(applicationid:any){
-    alert(applicationid)
+    // alert(applicationid)
     this.applicationService.deleteApp(applicationid).subscribe((data)=>{
       console.log(data);
     })
+    alert("Loan Application Rejected Successfully")
     this.router.navigate(['admin'])
   }
 
@@ -44,7 +45,10 @@ export class AdminComponent implements OnInit {
         console.log(data);
 
         this.getAllApplications(); 
-        this.router.navigate(['application']);})
+        alert("Loan Approved Successfully")
+        // this.router.navigate(['application']);
+        this.router.navigate(['account'])
+       })
      }
    
  }

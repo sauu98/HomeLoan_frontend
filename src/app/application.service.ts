@@ -17,6 +17,8 @@ export class ApplicationService {
     return this.httpClient.get(this.baseUrl+"/application");
   }
 
+  //ADDING NEW APPLICATION
+
   addApplication(application:Application){
     return this.httpClient.post(this.baseUrl+"/application/",application);
   }

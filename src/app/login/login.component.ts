@@ -17,7 +17,11 @@ export class LoginComponent implements OnInit {
   customerid?:any;
   message:any;
   data: any;
-  constructor(private router:Router,private route:ActivatedRoute,private customerService:CustomerService) { }
+  Preview:Previewdetails;
+  constructor(private router:Router,private route:ActivatedRoute,private customerService:CustomerService) {
+
+    this.Preview= new Previewdetails();
+   }
 
   ngOnInit(): void {
   }
@@ -25,19 +29,27 @@ export class LoginComponent implements OnInit {
     loginForm()
   {
 
-    if(this.customerService.addLogin(this.customerid).subscribe(
+    this.customerService.addLogin(this.customerid).subscribe(
        (data)=>
        {
-         console.log(data) ;
+         console.log(data);
          console.log(this.customerid);
-         this.customerid=data;
-         localStorage.setItem("cuID", this.customerid.toString());
+        this.Preview=data;
+        console.log(this.Preview);
+         if(this.customerid != null){
+           console.log(this.Preview.customerid);
+          localStorage.setItem("cuID", this.Preview.customerid+"");
+          this.router.navigate(['profiledashboard']);
+         }
+         else{
+           alert("Invalid Data")
+         }
+        
        })
-      )
-    { this.router.navigate(['profiledashboard']);}
+      
     
-   else{ window.alert("Invalid Details") }
-  }
+     }
+  
   
   // users:any;
 
@@ -68,11 +80,11 @@ export class LoginComponent implements OnInit {
 
 
   NewUser(){
-    this.router.navigate(['customer'])
+    this.router.navigate(['customer']);
   }
 
   Admin(){
-    this.router.navigate(['adminlogin'])
+    this.router.navigate(['adminlogin']);
   }
 
 }

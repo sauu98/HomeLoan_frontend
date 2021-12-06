@@ -45,8 +45,8 @@
                   <td>{{ap.propertylocation}}</td>
                   <td>{{ap.estimatedamount}}</td>
                   <td>{{ap.loanstatus}}</td>
-                  <td> <button  style="color:green" (click)="CreateAccount(ap)" >Approve</button></td>
-                  <td> <button (click)="deleteRow(ap.applicationid)" style="color:red">Reject</button></td>
+                  <td> <button (click)="CreateAccount(ap)" class="btn btn-primary btn-lg" >Approve</button></td>
+                  <td> <button (click)="deleteRow(ap.applicationid)" class="btn btn-danger btn-lg">Reject</button></td>
                   </tr>
                   
             

@@ -1,5 +1,5 @@
 export class Previewdetails {
-customerid:number=0;
+customerid?:number;
 firstname?:string
 lastname?:string
 nationality?:number

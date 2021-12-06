@@ -91,8 +91,8 @@ export class ShowAccountComponent implements OnInit {
 
   loanamount:any;
   
-  startdate:Date=new Date("12-06-2021");
-  enddate:Date=new Date("12-06-2023"); 
+  startdate:Date=new Date("12-12-2021");
+  enddate:Date=new Date("12-12-2023"); 
 
   
     findAccount()
